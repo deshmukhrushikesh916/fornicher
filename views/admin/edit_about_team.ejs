@@ -1,0 +1,41 @@
+<%-include('navbar.ejs')%>
+
+<div class="container-fluid bg-white  p-4">
+    <form action="/admin/update_team" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <input type="hidden" name="about_team_id" value="<%=about_team[0].about_team_id%>">
+            <div class="col-md-12 mb-3 text-center">
+                <h3> Update Employee</h3>
+            </div>
+            <div class="col-md-6">
+                Emplooye photo
+                <input class="form-control mb-4" type="file"  name="emplooye_photo">
+            </div>
+
+            <div class="col-md-6">
+                <img src="/uploads/<%=about_team[0].employee_photo%>" width="100px" alt="">
+            </div>
+
+            <div class="col-md-4">
+                Emplooye Name
+                <input class="form-control mb-4" type="text"  name="employee_name" value="<%=about_team[0].employee_name%>">
+            </div>
+
+            <div class="col-md-4">
+                Emplooye Position
+                <input class="form-control mb-4" type="text"  name="employee_position" value="<%=about_team[0].employee_position%>">
+            </div>
+
+            <div class="col-md-4">
+                Emplooye Details
+                <input class="form-control mb-4" type="text"  name="employee_details" value="<%=about_team[0].employee_details%>">
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary"> Update Emplooye </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%-include('footer.ejs')%>

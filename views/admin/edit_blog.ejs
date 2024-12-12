@@ -1,0 +1,65 @@
+<%-include('navbar.ejs')%>
+
+<div class="container-fluid bg-white">
+    <form action="/admin/update_blog" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-12 text-center mb-5">
+               <h1> Edit Blog</h1>
+            </div>
+            <div class="col-md-6">
+                Enter blog image
+                <input  type="file" name="blog_image"  class="form-control mb-4">
+                
+            </div>
+
+            <div class="col-md-6">
+               <img src="/uploads/<%=edit_blog[0].blog_image%>" width="100px" alt="">
+                
+            </div>
+
+            <div class="col-md-4">
+                Enter blog title
+                <input  type="text" value="<%=edit_blog[0].blog_title%>" name="blog_title" class="form-control mb-4">
+                <input  type="hidden" value="<%=edit_blog[0].blog_id%>" name="blog_id" class="form-control mb-4">
+                
+            </div>
+
+            <div class="col-md-4">
+                Enter blog details
+                <input  type="text" value="<%=edit_blog[0].blog_details%>" name="blog_details" class="form-control mb-4">
+
+                
+            </div>
+
+            <div class="col-md-4">
+                Enter blog post date
+                <input  type="date" value="<%=edit_blog[0].blog_post_date%>" name="blog_post_date" class="form-control mb-4">
+                
+            </div>
+
+            <div class="col-md-4">
+                Enter blog post time
+                <input  type="time" value="<%=edit_blog[0].blog_post_time%>" name="blog_post_time" class="form-control mb-4">
+                
+            </div>
+
+            <div class="col-md-4">
+                Enter blog post by
+                <input  type="text" value="<%=edit_blog[0].blog_post_by%>" name="blog_post_by" class="form-control mb-4">
+                
+            </div>
+
+            <div class="col-md-4">
+                Enter blog post by position
+                <input  type="text" value="<%=edit_blog[0].blog_post_by_position%>" name="blog_post_by_position" class="form-control mb-4">                
+            </div>
+
+            <div class="col-md-12 text-center mb-2">
+               <button class="btn btn-primary">Update blog</button>              
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%-include('footer.ejs')%>

@@ -1,0 +1,31 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/update_key_point" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white p-3">
+        <div class="row">
+            <div class="col-md-12 mb-3 text-center">
+                <h3>Update Key Point</h3>
+                <input type="hidden" name="key_point_id" value="<%=key_point_info[0].key_point_id%>">
+            </div>
+            <div class="col-md-4">
+                Enter Heading
+                <input type="text" name="why_choose_headnig" class="form-control mt-3" value="<%=key_point_info[0].why_choose_headnig%>">
+            </div>
+            <div class="col-md-4">
+                Enter Details
+                <input type="text" name="why_choose_details" class="form-control mt-3" value="<%=key_point_info[0].why_choose_details%>">
+            </div>
+            <div class="col-md-2">
+                Image
+                <input type="file" name="key_point_image" class="form-control mt-3">
+            </div>
+            <div class="col-md-2">
+                <img src="/uploads/<%=key_point_info[0].key_point_image%>"style="height:150px;width:160px;">
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Upadate Key Point</button>
+            </div>
+    
+        </div>
+    </div>
+    </form>
+<%- include("footer.ejs") %>

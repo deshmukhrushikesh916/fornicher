@@ -1,0 +1,99 @@
+<%- include("navbar.ejs") %>
+
+<br><br>
+<div class="container">
+    <div class="card">
+  <div class="card-header">
+  Invoice
+  <strong><%=order_info['order_date']%></strong> 
+    <span class="float-end"> <strong>Status:</strong> <%=order_info['order_status']%></span>
+  </div>
+  <div class="card-body">
+  <div class="row mb-4">
+  <div class="col-sm-6">
+  <h6 class="mb-3">From:</h6>
+  <div>
+
+  <strong>A2Z IT HUB</strong>
+  </div>
+  <div>AhmedNagar</div>
+  <div>Maharashtra, India - 414001</div>
+  <div>Email: info"a2zithub.com</div>
+  <div>Phone: +91 9876543210</div>
+  </div>
+  
+  <div class="col-sm-6">
+  <h6 class="mb-3">To:</h6>
+  <div>
+  <strong><%=order_info['c_fname']%>   <%=order_info['c_lname']%></strong>
+  </div>
+  <div><%=order_info['c_address']%> </div>
+  <div><%=order_info['c_area']%>,   <%=order_info['c_state']%>,    <%=order_info['c_postal_zip']%>   </div>
+  <div>Email: <%=order_info['c_email_address']%></div>
+  <div> Phone: <%=order_info['c_phone']%></div>
+  </div>
+  
+  
+  
+  </div>
+  
+  <div class="table-responsive-sm">
+  <table class="table table-striped">
+  <thead>
+  <tr>
+  <th class="center">#</th>
+  <th>Item</th>
+  
+  <th class="right">Unit Cost</th>
+    <th class="center">Qty</th>
+  <th class="right">Total</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+    <% products.map(function(val,i){ %>
+
+  <tr>
+         <td class="center"><%=i+1%></td>
+         <td class="left strong"><%=val.product_name%></td>
+  
+         <td class="right"><%=val.product_price%></td>
+          <td class="center"><%=val.product_qty%></td>
+         <td class="right"><%=val.product_qty * val.product_price%></td>
+  </tr>
+  <% 
+   });
+   %>
+  </tbody>
+  </table>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-4 col-sm-5">
+        <a href="/admin/dispatch_order/<%=order_info['order_id']%>">
+            <button class="btn btn-primary">Transfer into Dispatch</button>
+        </a>
+  </div>
+  <div class="col-lg-4 col-sm-5 ml-auto">
+  <table class="table table-clear">
+  <tbody>
+  <td class="left">
+  <strong>Total</strong>
+  </td>
+<% for(var i=0;i<products.length;i++) { %> 
+  <td class="right">
+  <strong><%=products[i].product_qty * products[i].product_price%></strong>
+  </td>
+  <% } %>
+  </tr>
+  </tbody>
+  </table>
+  
+  </div>
+  
+  </div>
+  
+  </div>
+  </div>
+  </div>
+<%- include("footer.ejs")%>

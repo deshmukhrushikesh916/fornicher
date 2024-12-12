@@ -1,0 +1,25 @@
+<%- include("navbar.ejs") %>
+
+<form action="/admin/update_product_type" method="post">
+
+    <div class="container-fluid p-4 bg-white">
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <h3>Update Product</h3>
+        </div>
+        <div class="col-md-6 mt-3">
+          Enter Type
+          <input type="hidden" name="product_type_id" class="form-control" value="<%=product_e.product_type_id%>">
+
+          <input type="text" name="product_type_name" class="form-control" value="<%=product_e.product_type_name%>">
+        </div>
+        <div class="col-md-2 mt-3">
+          <br>
+          <button class="btn btn-primary">Update Product</button>
+        </div>
+     </div>
+    </div>
+</form>
+<%- include("footer.ejs") %>

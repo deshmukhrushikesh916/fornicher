@@ -1,0 +1,51 @@
+<%-include('navbar.ejs')%>
+
+<div class="container-fluid bg-white">
+    <div class="row">
+        <div class="col-md-12 text-center text-dark">
+            <h3>
+                Team List
+            </h3>
+        </div>
+        
+        <table class="table table-striped table-bordered mt-2">
+            <tr>
+               <th>Action</th>
+                <th>Sr No</th>
+                <th>Emplooye Name</th>
+                <th>Emplooye Position</th>
+                <th>Emplooye Deatails</th>
+                <th>Emplooye Photo</th>
+            </tr>
+          
+          
+            <%
+            for(i=0;i<about_team.length;i++){
+                %>
+              <tr>
+
+                <td>
+                    <a href="/admin/edit_about_team/<%=about_team[i].about_team_id%>">
+                        <button class="text-primary border-0 fs-4 bg-white"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                    <a href="/admin/delete_about_team/<%=about_team[i].about_team_id%>" onclick="return confirm('Are You Sure?')">
+                      <button class="text-danger border-0 fs-4 bg-white"><i class="fa-sharp fa-solid fa-trash"></i>
+                    </button></a>
+                </td>   
+                <td><%=i+1%></td>
+                <td><%=about_team[i].employee_name%></td>
+                <td><%=about_team[i].employee_position%></td>
+                <td style="width:45%;"><%=about_team[i].employee_details%></td>
+                <td>
+                    <img src="/uploads/<%=about_team[i].employee_photo%>" width="70px" alt="" height="60px">
+                
+                </td>          
+              </tr>
+         <%
+            }
+            %>
+
+        </table> 
+        </div>
+    </div>
+</div>
+<%-include('footer.ejs')%>

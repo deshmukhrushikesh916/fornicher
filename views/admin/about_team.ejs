@@ -1,0 +1,35 @@
+<%- include("navbar.ejs") %>
+
+<div class="container-fluid bg-white p-4">
+    <form action="/admin/save_employee" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-12 mb-3 text-center">
+                <h3>About Us Team</h3>
+                </div>
+            <div class="col-md-9">
+                Emplooye photo
+                <input class="form-control mb-4" type="file"  name="employee_photo">
+            </div>
+
+            <div class="col-md-4">
+                Employee Name
+                <input class="form-control mb-4" type="text"  name="employee_name">
+            </div>
+
+            <div class="col-md-4">
+                Employee Position
+                <input class="form-control mb-4" type="text"  name="employee_position">
+            </div>
+
+            <div class="col-md-4">
+                Employee Details
+                <input class="form-control mb-4" type="text"  name="employee_details">
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary"> Save Employee </button>
+            </div>
+        </div>
+    </form>
+</div>
+<%- include("footer.ejs") %>

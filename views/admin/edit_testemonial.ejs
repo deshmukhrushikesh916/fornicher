@@ -1,0 +1,41 @@
+<%-include('navbar.ejs')%>
+
+<div class="container-fluid bg-white  p-4">
+    <form action="/admin/update_testimonials" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <input type="hidden" name="testimonial_id" value="<%=testmonial_data[0].testimonial_id%>">
+            <div class="col-md-12 mb-3 text-center">
+                <h3> Update Customer</h3>
+            </div>
+            <div class="col-md-6">
+                Customer photo
+                <input class="form-control mb-4" type="file" value="<%=testmonial_data[0].customer_photo%>"  name="customer_photo">
+            </div>
+
+            <div class="col-md-6">
+                <img src="/uploads/<%=testmonial_data[0].customer_photo%>" width="100px" alt="">
+            </div>
+
+            <div class="col-md-4">
+                Customer Name
+                <input class="form-control mb-4" type="text"  name="customer_name" value="<%=testmonial_data[0].customer_name%>">
+            </div>
+
+            <div class="col-md-4">
+                Customer Position
+                <input class="form-control mb-4" type="text"  name="customer_position" value="<%=testmonial_data[0].customer_position%>">
+            </div>
+
+            <div class="col-md-4">
+                Customer Message
+                <input class="form-control mb-4" type="text"  name="customer_message" value="<%=testmonial_data[0].customer_message%>">
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary"> Update Customer </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%-include('footer.ejs')%>

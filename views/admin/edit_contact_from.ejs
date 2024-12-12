@@ -1,0 +1,36 @@
+<%- include("navbar.ejs") %>
+
+<form  action="/admin/update_from" method="post">
+    <div class="container-fluid p-4 bg-white">
+        <input type="hidden" name="contact_from_id" value="<%=contact_from[0].contact_from_id%>">
+    <h3 class="mb-4">Contact Update</h3>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group mb-4">
+          <label class="text-black mb-2">First name</label>
+          <input type="text" name="fname"  class="form-control" value="<%=contact_from[0].fname%>">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group mb-4">
+          <label class="text-black mb-2">Last name</label>
+          <input type="text" name="lname" class="form-control" value="<%=contact_from[0].lname%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-4">
+      <label class="text-black mb-2">Email address</label>
+      <input type="email" name="email" class="form-control" value="<%=contact_from[0].email%>">
+    </div>
+
+    <div class="form-group mb-4">
+      <label class="text-black mb-2" >Message</label>
+      <textarea name="message" class="form-control" cols="30" rows="5"><%=contact_from[0].message%>
+      </textarea>
+    </div>
+     <div class="col-12 text-center">
+    <button type="submit" class="btn btn-primary text-center">Update Message</button>
+    </div>
+    </div>
+  </form>
+<%- include("footer.ejs") %>

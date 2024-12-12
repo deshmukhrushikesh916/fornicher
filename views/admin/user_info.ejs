@@ -1,0 +1,47 @@
+<%- include("navbar.ejs") %>
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                User List
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-sm">
+             <tr>
+                <th>Action</th>
+                <th>Sr.No</th>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Mobile Number</th>
+                <th>Email Id</th>
+                <th>Gender</th>
+                <th>Photo</th>
+                <th>Password</th>
+                
+             </tr>
+             <% for(var i=0;i<user_info.length;i++){ %>
+               
+                <tr>
+                    <td>
+                        <a href="/admin/user_delete/<%=user_info[i].user_id%>" onclick="return confirm('Are You Sure')"><button class="text-danger border-0 fs-4 bg-white"><i class="fa-sharp fa-solid fa-trash"></i></button></a>
+
+                    </td>
+                    <td><%=i+1%></td>
+                    <td><%=user_info[i].user_id%></td>
+                    <td><%=user_info[i].user_name%></td>
+                    <td><%=user_info[i].mobile_number%></td>
+                    <td><%=user_info[i].email_id%></td>
+                    <td><%=user_info[i].user_gender%></td>
+                    <td><%=user_info[i].user_photo%></td>
+                    <td><%=user_info[i].password%></td>
+
+                   
+                </tr>
+             <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("footer.ejs") %>

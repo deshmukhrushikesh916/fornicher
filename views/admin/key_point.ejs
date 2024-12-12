@@ -1,0 +1,27 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/save_key_point" method="post" enctype="multipart/form-data">
+<div class="container-fluid bg-white p-3">
+    <div class="row">
+        <div class="col-md-12 mb-3 text-center">
+            <h3>Key Points</h3>
+        </div>
+        <div class="col-md-4">
+            Enter Heading
+            <input type="text" name="why_choose_headnig" class="form-control mt-3">
+        </div>
+        <div class="col-md-4">
+            Enter Details
+            <input type="text" name="why_choose_details" class="form-control mt-3">
+        </div>
+        <div class="col-md-4">
+            Image
+            <input type="file" name="key_point_image" class="form-control mt-3">
+        </div>
+        <div class="col-md-12 mt-3 text-center">
+            <button class="btn btn-primary">Save Key Point</button>
+        </div>
+
+    </div>
+</div>
+</form>
+<%- include("footer.ejs") %>
